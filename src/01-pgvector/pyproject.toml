@@ -1,0 +1,16 @@
+[project]
+name = "01-pgvector"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "openai>=2.1.0",
+    "pgvector>=0.4.1",
+    "psycopg[binary]>=3.2.10",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.30.1",
+]
