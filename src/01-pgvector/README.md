@@ -68,42 +68,7 @@ psql postgresql://postgres:postgres@localhost:5432/postgres
 
 # Option 2: Via Docker (if psql not installed)
 docker-compose exec pgvector psql -U postgres -d postgres
+
+# Check connection
+docker-compose exec pgvector psql -U postgres -d postgres -c "SELECT version();"
 ```
-
----
-
-## 2. Create the Schema
-
-### Understanding the Architecture
-
-For RAG applications, we use a **document/chunk** architecture:
-
-- **Documents**: Original source files (PDFs, markdown, etc.)
-- **Chunks**: Smaller pieces of documents that are embedded and searchable
-
-This separation allows you to:
-- Track source documents
-- Search efficiently with smaller chunks
-- Reconstruct context when needed
-
-### Create Tables
-
-Create `schema.sql`:
-
-```sql
--- Enable pgvector extension
-CREATE EXTENSION IF NOT EXISTS vector;
-
--- Clean slate (for development)
-DROP TABLE IF EXISTS faq_chunks CASCADE;
-DROP TABLE IF EXISTS faq_documents CASCADE;
-
--- Source documents
-CREATE TABLE faq_documents (
-    id SERIAL PRIMARY KEY,
-    filename TEXT NOT NULL,
-    content TEXT NOT NULL,
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
-);
-
--- Embedded chunks for search

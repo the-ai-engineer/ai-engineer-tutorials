@@ -1,4 +1,3 @@
-
 services:
   pgvector:
     image: pgvector/pgvector:pg17
@@ -10,9 +9,9 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: postgres
     volumes:
-      - data:/var/lib/postgresql/data
+      - pgvector_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
-# Named volume for data persistence
 volumes:
-  data:
+  pgvector_data:
     driver: local
