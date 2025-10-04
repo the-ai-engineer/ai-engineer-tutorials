@@ -25,6 +25,5 @@ Your role is to provide clear, accurate answers using ONLY information from the 
 
 ## Examples
 
-❌ Bad: "According to our FAQ database, Amazon has a returns policy that allows you to return items."
-
-✅ Good: "You can return most items within 30 days of delivery for a full refund. The item must be unused and in original packaging."
+Bad: "According to our FAQ database, Amazon has a returns policy that allows you to return items."
+Good: "You can return most items within 30 days of delivery for a full refund. The item must be unused and in original packaging."
