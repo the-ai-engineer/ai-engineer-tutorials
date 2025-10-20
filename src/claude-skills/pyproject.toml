@@ -1,0 +1,15 @@
+[project]
+name = "claude-skills"
+version = "0.1.0"
+description = "A tutorial on using Claude Skill via the SDK"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "anthropic>=0.71.0",
+    "dotenv>=0.9.9",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.0.1",
+]
