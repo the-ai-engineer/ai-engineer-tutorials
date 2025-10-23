@@ -13,27 +13,27 @@ if not os.getenv("ANTHROPIC_API_KEY"):
         "Copy ../.env.example to ../.env and add your API key."
     )
 
-# =================================  
+# =================================
 # Initialize client
-# =================================  
+# =================================
 
 client = Anthropic()
 
-# =================================  
+# =================================
 # 1. Create skill
-# =================================  
+# =================================
 
 skill = client.beta.skills.create(
     display_title="veo3",
     files=files_from_dir("skills/veo3-image-prompt")
 )
 
-# =================================  
+# =================================
 # 2. List skills
-# =================================  
+# =================================
 
 def list_skills(client):
-    skills = client.beta.skills.list(        
+    skills = client.beta.skills.list(
         betas=["skills-2025-10-02"]
     )
 
@@ -42,7 +42,7 @@ def list_skills(client):
 
 list_skills(client)
 
-# =================================  
+# =================================
 # 3. Use a skill
 # =================================
 def test_skill(
@@ -81,11 +81,11 @@ def test_skill(
     return response
 
 
-# =================================  
+# =================================
 # 4. Delete a skill
-# =================================  
+# =================================
 
-def delete_skill(skill_id: str):
+def delete_skill(client: Anthropic, skill_id: str):
 
     versions = client.beta.skills.versions.list(skill_id=skill_id)
 
@@ -99,9 +99,9 @@ def delete_skill(skill_id: str):
 
     return True
 
-# =================================  
-# 5. Complete example 
-# ================================= 
+# =================================
+# 5. Complete example
+# =================================
 
 SKILL_ID = "skill_01AuxL3XAUNm6jMfmY4CFHmm"
 
