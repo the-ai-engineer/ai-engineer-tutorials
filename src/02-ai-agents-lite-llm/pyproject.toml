@@ -1,0 +1,12 @@
+[project]
+name = "02-ai-agents-lite-llm"
+version = "0.1.0"
+description = "Learn how to build AI agents in Python using LiteLLM for model-agnostic development"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "litellm>=1.52.0",
+    "python-dotenv>=1.0.0",
+    "pydantic>=2.0.0",
+    "ipykernel"
+]
