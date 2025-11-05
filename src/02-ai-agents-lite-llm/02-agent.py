@@ -226,7 +226,7 @@ def main():
     Output markdown tables and code blocks for clarity."""
 
     agent = Agent(
-        model="gpt-5",
+        model="gemini/gemini-2.5-flash",
         system_instruction=SYSTEM_PROMPT,
         tools=tools,
     )
