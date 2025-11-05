@@ -30,9 +30,9 @@ def basic_completion(model: str, prompt: str) -> str:
     return response.choices[0].message.content
 
 
-response = basic_completion("gpt-5", "Do I need frameworks to build AI agents?")
+# basic_completion("gpt-5", "Do I need frameworks to build AI agents?")
 
-basic_completion("gemini/gemini-2.5-flash", "HELLO")
+# basic_completion("gemini/gemini-2.5-flash", "HELLO")
 
 
 def streaming_completion(model: str, prompt: str):
